@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   background: #fdf6e3; /* soft cream */
-  color: #1e293b; /* dark slate gray for text */
+  color: #1e293b; /* dark slate gray */
   scroll-behavior: smooth;
   line-height: 1.7;
   font-size: 16px;
@@ -53,7 +53,7 @@ nav ul li a.active::after {
   display: block;
   width: 100%;
   height: 3px;
-  background: #c7d2fe;
+  background: #c7d2fe; /* light blue underline */
   border-radius: 2px;
   margin-top: 5px;
 }
@@ -68,7 +68,7 @@ nav ul li a.active::after {
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   flex-wrap: wrap;
-  margin-top: 60px; /* spacing below nav */
+  margin-top: 60px; /* space below nav */
 }
 
 .profile-pic img {
@@ -90,7 +90,7 @@ nav ul li a.active::after {
   font-size: 2.5rem;
   font-weight: 700;
   margin: 0 0 10px 0;
-  color: #0f172a;
+  color: #0f172a; /* dark blue */
 }
 
 .header-text .title {
