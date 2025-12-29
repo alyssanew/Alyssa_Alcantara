@@ -2,8 +2,8 @@
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  background: #f8fafc; /* soft background */
-  color: #1e293b;
+  background: #fdf6e3; /* soft cream */
+  color: #1e293b; /* dark slate gray for body text */
   scroll-behavior: smooth;
   line-height: 1.7;
   font-size: 16px;
@@ -14,11 +14,11 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  background-color: #e0e7ff;
+  background-color: #1e3a8a; /* dark blue nav background */
   padding: 15px 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-  border-bottom: 1px solid #c7d2fe;
+  border-bottom: 1px solid #2563eb;
   backdrop-filter: blur(5px);
 }
 
@@ -37,7 +37,7 @@ nav ul li {
 nav ul li a {
   font-family: 'Open Sans', sans-serif;
   text-decoration: none;
-  color: #0f172a; /* navy blue */
+  color: #fdf6e3; /* cream for text */
   font-weight: 600;
   font-size: 1.05rem;
   transition: all 0.3s ease;
@@ -46,7 +46,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: #2563eb;
+  color: #c7d2fe; /* light blue hover */
 }
 
 nav ul li a.active::after {
@@ -54,15 +54,15 @@ nav ul li a.active::after {
   display: block;
   width: 100%;
   height: 3px;
-  background: #2563eb;
+  background: #c7d2fe; /* light blue underline */
   border-radius: 2px;
   margin-top: 5px;
 }
 
 /* HEADER SECTION */
 .header {
-  background: linear-gradient(135deg, #c7d2fe, #e0f2fe);
-  color: #0f172a;
+  background: linear-gradient(135deg, #c7d2fe, #e0f2fe); /* light blue gradient */
+  color: #0f172a; /* dark blue text */
   text-align: center;
   padding: 80px 20px;
   border-radius: 0 0 50% 50% / 0 0 10% 10%;
@@ -74,6 +74,7 @@ nav ul li a.active::after {
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 15px;
+  color: #0f172a;
 }
 
 .header p {
@@ -84,7 +85,7 @@ nav ul li a.active::after {
 
 /* SECTION CARDS */
 .section {
-  background: #ffffff;
+  background: #fff9f0; /* cream card background */
   margin: 80px auto 40px auto;
   padding: 40px 35px;
   border-radius: 20px;
@@ -104,8 +105,8 @@ nav ul li a.active::after {
 .section h2 {
   font-family: 'Inter', sans-serif;
   font-size: 2rem;
-  color: #1e3a8a;
-  border-bottom: 3px solid #2563eb;
+  color: #1e3a8a; /* navy blue */
+  border-bottom: 3px solid #0f172a; /* dark blue */
   display: inline-block;
   padding-bottom: 5px;
   font-weight: 700;
@@ -114,7 +115,7 @@ nav ul li a.active::after {
 
 /* PARAGRAPHS */
 p {
-  color: #334155;
+  color: #1e293b;
   font-weight: 400;
   font-size: 1rem;
 }
@@ -126,7 +127,7 @@ ul {
 }
 
 li {
-  background: #f1f5f9;
+  background: #fdf6e3; /* cream for project cards */
   margin: 15px 0;
   padding: 20px 25px;
   border-radius: 15px;
@@ -140,18 +141,18 @@ li:hover {
 }
 
 li a {
-  color: #1e3a8a;
+  color: #1e3a8a; /* navy blue link */
   font-weight: 600;
   font-size: 1.05rem;
   text-decoration: none;
 }
 
 li a:hover {
-  color: #2563eb;
+  color: #2563eb; /* bright blue hover */
 }
 
 .project-desc {
-  color: #475569;
+  color: #475569; /* gray for description */
   font-size: 0.95rem;
   margin-top: 8px;
   max-width: 700px;
@@ -230,3 +231,5 @@ li a:hover {
     font-size: 0.95rem;
   }
 }
+
+
