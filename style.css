@@ -1,3 +1,63 @@
+/* HEADER CARD */
+.header-card {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: #c7d2fe; /* light blue gradient background */
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.profile-pic img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #1e3a8a; /* navy border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.header-text h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #0f172a; /* dark blue */
+}
+
+.header-text .title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 15px;
+}
+
+.header-text .objective {
+  font-size: 1rem;
+  color: #334155;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* RESPONSIVE FOR HEADER CARD */
+@media screen and (max-width: 768px) {
+  .header-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-text .objective {
+    max-width: 100%;
+  }
+}
 /* GLOBAL STYLES */
 body {
   margin: 0;
