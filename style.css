@@ -59,16 +59,6 @@ nav ul li a.active::after {
   border-radius: 2px;
   margin-top: 5px;
 }
-
-/* HEADER SECTION */
-.header {
-  background: linear-gradient(135deg, #c7d2fe, #e0f2fe); /* light blue gradient */
-  color: #0f172a; /* dark blue text */
-  text-align: center;
-  padding: 80px 20px;
-  border-radius: 0 0 50% 50% / 0 0 10% 10%;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
 /* HEADER CARD */
 .header-card {
   display: flex;
@@ -117,6 +107,21 @@ nav ul li a.active::after {
   max-width: 600px;
 }
 
+/* RESPONSIVE FOR HEADER CARD */
+@media screen and (max-width: 768px) {
+  .header-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-text .objective {
+    max-width: 100%;
+  }
+}
+
+
+  
 /* RESPONSIVE FOR HEADER CARD */
 @media screen and (max-width: 768px) {
   .header-card {
