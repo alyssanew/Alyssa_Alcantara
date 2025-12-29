@@ -1,23 +1,25 @@
-/* Global Styles */
+/* GLOBAL STYLES */
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  background: #f8fafc; /* very light gray */
-  color: #1e293b; /* dark slate gray for text */
+  background: #f8fafc; /* soft background */
+  color: #1e293b;
   scroll-behavior: smooth;
   line-height: 1.7;
   font-size: 16px;
 }
 
-/* Navigation Bar */
+/* NAVIGATION BAR */
 nav {
   position: fixed;
   width: 100%;
   top: 0;
-  background-color: #e0e7ff; /* light professional blue */
+  background-color: #e0e7ff;
   padding: 15px 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  border-bottom: 1px solid #c7d2fe;
+  backdrop-filter: blur(5px);
 }
 
 nav ul {
@@ -35,24 +37,59 @@ nav ul li {
 nav ul li a {
   font-family: 'Open Sans', sans-serif;
   text-decoration: none;
-  color: #0f172a; /* navy blue font */
+  color: #0f172a; /* navy blue */
   font-weight: 600;
   font-size: 1.05rem;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-nav ul li a:hover {
-  color: #2563eb; /* brighter blue hover */
+nav ul li a:hover,
+nav ul li a.active {
+  color: #2563eb;
 }
 
-/* Section Cards */
+nav ul li a.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 2px;
+  margin-top: 5px;
+}
+
+/* HEADER SECTION */
+.header {
+  background: linear-gradient(135deg, #c7d2fe, #e0f2fe);
+  color: #0f172a;
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 0 0 50% 50% / 0 0 10% 10%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.header h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.header p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+/* SECTION CARDS */
 .section {
   background: #ffffff;
-  margin: 120px auto 40px auto; /* space for fixed nav */
+  margin: 80px auto 40px auto;
   padding: 40px 35px;
-  border-radius: 15px;
+  border-radius: 20px;
   max-width: 900px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.8s ease;
@@ -63,99 +100,85 @@ nav ul li a:hover {
   transform: translateY(0);
 }
 
-/* Header Section */
-.header {
-  background: #c7d2fe; /* soft professional blue */
-  color: #0f172a; /* navy */
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.header h1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.header p {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #1e293b;
-}
-
-/* Section Headings */
+/* SECTION HEADINGS */
 .section h2 {
   font-family: 'Inter', sans-serif;
-  font-size: 1.8rem;
-  margin-top: 0;
-  color: #1e3a8a; /* dark blue */
-  border-bottom: 2px solid #2563eb;
+  font-size: 2rem;
+  color: #1e3a8a;
+  border-bottom: 3px solid #2563eb;
   display: inline-block;
   padding-bottom: 5px;
-  font-weight: 600;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-/* Paragraphs */
+/* PARAGRAPHS */
 p {
-  color: #334155; /* medium gray */
+  color: #334155;
   font-weight: 400;
   font-size: 1rem;
 }
 
-/* Lists */
+/* LISTS / PROJECTS */
 ul {
   list-style: none;
   padding: 0;
 }
 
 li {
-  background: #f1f5f9; /* light card background */
-  margin: 10px auto;
-  padding: 15px 20px;
-  border-radius: 12px;
-  width: fit-content;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  font-size: 1rem;
-  color: #1e293b;
+  background: #f1f5f9;
+  margin: 15px 0;
+  padding: 20px 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Project Descriptions */
-.project-desc {
-  color: #475569; /* gray for description */
-  font-size: 0.95rem;
-  margin-top: 5px;
-  max-width: 700px;
+li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
 }
 
-/* Links inside project cards */
 li a {
-  color: #1e3a8a; /* dark blue for project links */
+  color: #1e3a8a;
   font-weight: 600;
+  font-size: 1.05rem;
   text-decoration: none;
-  font-size: 1rem;
 }
 
 li a:hover {
-  color: #2563eb; /* bright blue hover */
+  color: #2563eb;
 }
 
-/* Certificates Layout */
+.project-desc {
+  color: #475569;
+  font-size: 0.95rem;
+  margin-top: 8px;
+  max-width: 700px;
+}
+
+/* CERTIFICATES */
+.certificates {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .certificates img {
   width: 300px;
   height: 150px;
-  margin: 10px;
-  border-radius: 10px;
+  margin: 15px;
+  border-radius: 15px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .certificates img:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* Modal for Certificates */
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -166,7 +189,7 @@ li a:hover {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0,0,0,0.95);
 }
 
 .modal-content {
@@ -174,7 +197,7 @@ li a:hover {
   display: block;
   max-width: 80%;
   max-height: 80%;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .close {
@@ -185,4 +208,25 @@ li a:hover {
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+  .section {
+    margin: 60px 20px;
+    padding: 25px 20px;
+  }
+
+  .certificates img {
+    width: 250px;
+    height: 125px;
+  }
+
+  nav ul li {
+    margin: 0 15px;
+  }
+
+  nav ul li a {
+    font-size: 0.95rem;
+  }
 }
