@@ -71,7 +71,7 @@ nav ul li a.active::after {
   align-items: center;
   gap: 25px;
   background: #0f172a; /* navy background */
-  color: #ffffff; /* white text */
+  color: #0f172a; /* white text */
   padding: 40px 30px;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -99,7 +99,7 @@ nav ul li a.active::after {
   font-size: 2.7rem; /* slightly larger */
   font-weight: 800; /* extra bold */
   margin: 0 0 10px 0;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .header-text .title {
