@@ -78,6 +78,15 @@ nav ul li a.active::after {
   flex-wrap: wrap;
   margin-top: 60px;
   font-weight: 700;
+  /* ===================== FORCE HEADER TEXT COLOR ===================== */
+.header-card,
+.header-card h1,
+.header-card .title,
+.header-card .objective,
+.header-card p {
+  color: #0f172a !important; /* navy/black for full readability */
+}
+
 }
 
 .profile-pic img {
