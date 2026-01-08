@@ -22,7 +22,7 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  background-color: #e5e7eb; /* light gray/navy contrast */
+  background-color: #0f172a; /* light gray/navy contrast */
   padding: 15px 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
