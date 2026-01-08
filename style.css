@@ -2,8 +2,8 @@
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  background: #fdf6e3; /* soft cream */
-  color: #1e293b; /* dark slate gray */
+  background: #ffffff; /* white background */
+  color: #0f172a; /* navy/black text */
   scroll-behavior: smooth;
   line-height: 1.7;
   font-size: 16px;
@@ -14,11 +14,11 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  background-color: #1e3a8a; /* dark blue nav */
+  background-color: #0f172a; /* navy blue nav */
   padding: 15px 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-  border-bottom: 1px solid #2563eb;
+  border-bottom: 1px solid #1e293b; /* dark border */
   backdrop-filter: blur(5px);
 }
 
@@ -36,7 +36,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #ffffff; /* cream text */
+  color: #ffffff; /* white text */
   font-weight: 600;
   font-size: 1.05rem;
   transition: all 0.3s ease;
@@ -45,7 +45,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: #c7d2fe; /* light blue hover */
+  color: #3b82f6; /* light blue hover */
 }
 
 nav ul li a.active::after {
@@ -53,7 +53,7 @@ nav ul li a.active::after {
   display: block;
   width: 100%;
   height: 3px;
-  background: #c7d2fe; /* light blue underline */
+  background: #3b82f6; /* underline light blue */
   border-radius: 2px;
   margin-top: 5px;
 }
@@ -63,12 +63,13 @@ nav ul li a.active::after {
   display: flex;
   align-items: center;
   gap: 25px;
-  background: #c7d2fe; /* light blue */
+  background: #0f172a; /* navy background */
+  color: #ffffff; /* white text */
   padding: 40px 30px;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   flex-wrap: wrap;
-  margin-top: 60px; /* space below nav */
+  margin-top: 60px;
 }
 
 .profile-pic img {
@@ -76,13 +77,13 @@ nav ul li a.active::after {
   height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #1e3a8a;
+  border: 3px solid #ffffff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-pic img:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .header-text h1 {
@@ -90,26 +91,26 @@ nav ul li a.active::after {
   font-size: 2.5rem;
   font-weight: 700;
   margin: 0 0 10px 0;
-  color: #0f172a; /* dark blue */
+  color: #ffffff;
 }
 
 .header-text .title {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #1e293b;
+  color: #d1d5db; /* light gray text */
   margin-bottom: 15px;
 }
 
 .header-text .objective {
   font-size: 1rem;
-  color: #334155;
+  color: #cbd5e1; /* lighter gray */
   line-height: 1.6;
   max-width: 600px;
 }
 
 /* ===================== SECTION CARDS ===================== */
 .section {
-  background: #fff9f0; /* cream card background */
+  background: #f8fafc; /* almost white */
   margin: 40px auto;
   padding: 40px 35px;
   border-radius: 20px;
@@ -125,21 +126,19 @@ nav ul li a.active::after {
   transform: translateY(0);
 }
 
-/* Section headings */
 .section h2 {
   font-family: 'Inter', sans-serif;
   font-size: 2rem;
-  color: #1e3a8a; /* navy */
-  border-bottom: 3px solid #0f172a; /* dark blue underline */
+  color: #0f172a; /* navy heading */
+  border-bottom: 3px solid #1e293b; /* dark underline */
   display: inline-block;
   padding-bottom: 5px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
-/* Paragraphs */
 p {
-  color: #1e293b;
+  color: #1e293b; /* dark text */
   font-weight: 400;
   font-size: 1rem;
 }
@@ -151,7 +150,7 @@ ul {
 }
 
 li {
-  background: #fdf6e3; /* cream cards */
+  background: #ffffff; /* white cards */
   margin: 15px 0;
   padding: 20px 25px;
   border-radius: 15px;
@@ -165,14 +164,14 @@ li:hover {
 }
 
 li a {
-  color: #1e3a8a; /* navy links */
+  color: #0f172a; /* navy link */
   font-weight: 600;
   font-size: 1.05rem;
   text-decoration: none;
 }
 
 li a:hover {
-  color: #2563eb; /* bright blue hover */
+  color: #3b82f6; /* blue hover */
 }
 
 .project-desc {
