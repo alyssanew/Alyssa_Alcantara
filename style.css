@@ -1,90 +1,95 @@
-/* ===================== DESIGN TOKENS ===================== */
+/* ===================== COLOR SYSTEM ===================== */
 :root {
-  --bg-main: #ffffff;
-  --bg-soft: #f8fafc;
-  --bg-card: #ffffff;
+  --bg-main: #f9fafb;
+  --bg-card: #f1f5f9;
+  --bg-white: #ffffff;
+
   --text-main: #0f172a;
   --text-muted: #475569;
-  --accent: #0f172a;
+
+  --accent: #1e293b;
+  --accent-soft: #334155;
+
   --border-soft: #e2e8f0;
-  --shadow-soft: 0 10px 25px rgba(0,0,0,0.06);
+
+  --shadow-soft: 0 10px 25px rgba(0,0,0,0.08);
   --shadow-hover: 0 18px 40px rgba(0,0,0,0.12);
 }
 
 /* ===================== GLOBAL ===================== */
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
-  font-family: 'Inter', 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background: var(--bg-main);
   color: var(--text-main);
-  line-height: 1.75;
+  scroll-behavior: smooth;
+  line-height: 1.7;
   font-size: 16px;
   font-weight: 500;
 }
 
 a {
   text-decoration: none;
-  color: var(--text-main);
   font-weight: 600;
+  color: var(--accent);
 }
 
-/* ===================== NAV ===================== */
+/* ===================== NAVIGATION ===================== */
 nav {
   position: fixed;
-  top: 0;
   width: 100%;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-soft);
+  top: 0;
+  background: rgba(15, 23, 42, 0.95);
+  padding: 16px 0;
   z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
 }
 
 nav ul {
+  list-style: none;
   display: flex;
   justify-content: center;
-  gap: 40px;
-  list-style: none;
-  padding: 18px 0;
   margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 28px;
 }
 
 nav ul li a {
-  font-size: 0.95rem;
-  color: var(--text-muted);
+  color: #e5e7eb;
+  font-size: 1.05rem;
+  font-weight: 600;
   position: relative;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: var(--text-main);
+  color: #ffffff;
 }
 
 nav ul li a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
+  content: '';
+  display: block;
   width: 100%;
   height: 2px;
-  background: var(--accent);
-  border-radius: 2px;
+  background: #ffffff;
+  margin-top: 6px;
 }
 
-/* ===================== HEADER ===================== */
+/* ===================== HEADER CARD ===================== */
 .header-card {
-  max-width: 1100px;
-  margin: 120px auto 90px;
-  background: linear-gradient(135deg, #f8fafc, #eef2f7);
-  border-radius: 24px;
-  padding: 60px;
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 32px;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  padding: 50px;
+  border-radius: 24px;
   box-shadow: var(--shadow-soft);
+  margin: 120px auto 80px;
+  max-width: 1100px;
 }
 
 .header-card * {
@@ -92,56 +97,41 @@ nav ul li a.active::after {
 }
 
 .profile-pic img {
-  width: 160px;
-  height: 160px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  border: 3px solid var(--accent);
+  object-fit: cover;
+  border: 4px solid var(--accent);
 }
 
 .header-text h1 {
   font-size: 2.6rem;
   font-weight: 800;
-  margin: 0;
 }
 
 .header-text .title {
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: 1.15rem;
   color: var(--text-muted);
 }
 
 .header-text .objective {
-  margin-top: 18px;
-  max-width: 700px;
+  margin-top: 16px;
+  font-size: 1.05rem;
   color: var(--text-muted);
+  max-width: 720px;
 }
 
 /* ===================== SECTIONS ===================== */
 .section {
-  max-width: 1000px;
-  margin: 90px auto;
-  background: var(--bg-soft);
+  background: var(--bg-card);
+  margin: 80px auto;
+  padding: 50px;
   border-radius: 22px;
-  padding: 55px;
+  max-width: 1000px;
   box-shadow: var(--shadow-soft);
   position: relative;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  opacity: 0;
-  transform: translateY(25px);
-}
-
-/* staggered horizontal layout */
-.section:nth-of-type(odd) {
-  margin-left: calc(50% - 500px);
-}
-
-.section:nth-of-type(even) {
-  margin-right: calc(50% - 500px);
-}
-
-.section.visible {
-  opacity: 1;
-  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .section:hover {
@@ -149,12 +139,12 @@ nav ul li a.active::after {
   box-shadow: var(--shadow-hover);
 }
 
-/* accent bar */
+/* subtle accent bar */
 .section::before {
-  content: "";
+  content: '';
   position: absolute;
   left: -14px;
-  top: 45px;
+  top: 50px;
   width: 5px;
   height: 70px;
   background: var(--accent);
@@ -162,65 +152,41 @@ nav ul li a.active::after {
 }
 
 .section h2 {
-  font-size: 2.1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 2.2rem;
+  color: var(--text-main);
   font-weight: 800;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 }
 
 .section h2::after {
-  content: "";
+  content: '';
   display: block;
   width: 60px;
   height: 3px;
   background: var(--accent);
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 /* ===================== TEXT ===================== */
 p {
   color: var(--text-muted);
+  font-size: 1rem;
 }
 
-/* ===================== LISTS → FAANG CARDS ===================== */
+/* ===================== LISTS / PROJECTS ===================== */
 ul {
   list-style: none;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-  position: relative;
-}
-
-/* timeline line */
-ul::before {
-  content: "";
-  position: absolute;
-  left: 12px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--border-soft);
 }
 
 li {
-  background: var(--bg-card);
+  background: var(--bg-white);
+  margin: 18px 0;
+  padding: 26px;
   border-radius: 18px;
-  padding: 28px 28px 28px 40px;
   box-shadow: var(--shadow-soft);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-}
-
-/* timeline dot */
-li::before {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 32px;
-  width: 10px;
-  height: 10px;
-  background: var(--accent);
-  border-radius: 50%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 li:hover {
@@ -229,8 +195,9 @@ li:hover {
 }
 
 li a {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
+  color: var(--accent);
 }
 
 .project-desc {
@@ -241,12 +208,12 @@ li a {
 
 /* ===================== BUTTON ===================== */
 .button {
+  display: inline-block;
   background: var(--accent);
   color: #ffffff;
-  padding: 14px 28px;
+  padding: 14px 30px;
   border-radius: 10px;
   font-weight: 700;
-  display: inline-block;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -259,21 +226,21 @@ li a {
 .certificates {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: center;
+  gap: 28px;
 }
 
 .certificates img {
   width: 300px;
   height: 160px;
-  border-radius: 16px;
+  border-radius: 18px;
   border: 1px solid var(--border-soft);
   box-shadow: var(--shadow-soft);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .certificates img:hover {
-  transform: scale(1.04);
+  transform: scale(1.05);
   box-shadow: var(--shadow-hover);
 }
 
@@ -282,7 +249,7 @@ li a {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background-color: rgba(0,0,0,0.9);
   z-index: 2000;
 }
 
@@ -290,21 +257,20 @@ li a {
   max-width: 85%;
   max-height: 85%;
   margin: auto;
-  display: block;
   border-radius: 16px;
 }
 
 .close {
   position: absolute;
-  top: 30px;
-  right: 40px;
+  top: 28px;
+  right: 38px;
   font-size: 36px;
-  color: white;
+  color: #ffffff;
   cursor: pointer;
 }
 
-/* ===================== MOBILE ===================== */
-@media (max-width: 900px) {
+/* ===================== RESPONSIVE ===================== */
+@media screen and (max-width: 768px) {
   .header-card {
     flex-direction: column;
     text-align: center;
@@ -312,27 +278,20 @@ li a {
   }
 
   .section {
-    margin: 70px 20px;
+    margin: 60px 20px;
+    padding: 35px;
   }
 
   .section::before {
     display: none;
   }
 
-  ul {
-    grid-template-columns: 1fr;
+  .certificates img {
+    width: 250px;
+    height: 130px;
   }
 
-  ul::before {
-    display: none;
-  }
-
-  li {
-    padding-left: 28px;
-  }
-
-  li::before {
-    left: 10px;
+  nav ul li {
+    margin: 0 16px;
   }
 }
-
