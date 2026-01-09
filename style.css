@@ -53,7 +53,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fdf2f8;
+  color: #0f172a;
   font-size: 1.05rem;
   font-weight: 600;
   position: relative;
@@ -61,7 +61,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: #ffffff;
+  color: #000000;
 }
 
 nav ul li a.active::after {
