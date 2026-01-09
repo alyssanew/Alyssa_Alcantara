@@ -125,15 +125,23 @@ nav ul li a.active::after {
   padding: 55px;
   box-shadow: var(--shadow-soft);
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  opacity: 0;
+  transform: translateY(25px);
 }
 
-/* stagger layout (no HTML change) */
+/* staggered horizontal layout */
 .section:nth-of-type(odd) {
   margin-left: calc(50% - 500px);
 }
+
 .section:nth-of-type(even) {
   margin-right: calc(50% - 500px);
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section:hover {
@@ -141,7 +149,7 @@ nav ul li a.active::after {
   box-shadow: var(--shadow-hover);
 }
 
-/* subtle accent */
+/* accent bar */
 .section::before {
   content: "";
   position: absolute;
@@ -157,7 +165,6 @@ nav ul li a.active::after {
   font-size: 2.1rem;
   font-weight: 800;
   margin-bottom: 25px;
-  position: relative;
 }
 
 .section h2::after {
@@ -172,24 +179,48 @@ nav ul li a.active::after {
 /* ===================== TEXT ===================== */
 p {
   color: var(--text-muted);
-  font-size: 1rem;
 }
 
-/* ===================== LISTS → CARDS ===================== */
+/* ===================== LISTS → FAANG CARDS ===================== */
 ul {
   list-style: none;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 28px;
+  position: relative;
+}
+
+/* timeline line */
+ul::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border-soft);
 }
 
 li {
   background: var(--bg-card);
   border-radius: 18px;
-  padding: 28px;
+  padding: 28px 28px 28px 40px;
   box-shadow: var(--shadow-soft);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* timeline dot */
+li::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 32px;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
 }
 
 li:hover {
@@ -198,7 +229,8 @@ li:hover {
 }
 
 li a {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
+  font-weight: 700;
 }
 
 .project-desc {
@@ -215,7 +247,7 @@ li a {
   border-radius: 10px;
   font-weight: 700;
   display: inline-block;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .button:hover {
@@ -289,6 +321,18 @@ li a {
 
   ul {
     grid-template-columns: 1fr;
+  }
+
+  ul::before {
+    display: none;
+  }
+
+  li {
+    padding-left: 28px;
+  }
+
+  li::before {
+    left: 10px;
   }
 }
 
